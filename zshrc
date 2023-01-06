@@ -39,13 +39,15 @@ PROMPT="%{${fg[red]}%}  %~  %{$reset_color%} %{${fg[yellow]}%}$  %{$reset_color%
 export CLICOLOR=1
 export LSCOLORS=cxgxcxdxcxegedabagacad
 export GOPATH="$HOME/go"
-export GOROOT="/usr/local/Cellar/go/1.16.3/libexec"
 
 # PATH
 export PATH=$HOME/.nodebrew/current/bin:$HOME/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
 export PATH=$HOME/.gem/ruby/3.0.0/bin:$PATH
 export PATH=/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/3.0.0/bin:$PATH
+export PATH=/usr/local/go/bin:$HOME/go/bin:$PATH
+export PATH=/Applications/CMake.app/Contents/bin:$PATH
+export PATH=$HOME/Library/Python/3.8/bin/:$PATH
 
 export EDITOR=vim
 eval "$(direnv hook zsh)"

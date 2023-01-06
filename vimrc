@@ -16,8 +16,7 @@ set expandtab
 set wildmenu
 set wildmode=list:longest
 set wrapscan
-set hlsearch
-set nohlsearch
+set incsearch
 set wrap
 set showmatch
 set showcmd
@@ -31,8 +30,18 @@ set termencoding=utf-8
 set encoding=utf-8
 set fileencoding=utf-8
 
+" command line editing without arrow keys
+" see :h cmdline-editing
+cnoremap <C-A> <Home>
+cnoremap <C-F> <Right>
+cnoremap <C-B> <Left>
+cnoremap <Esc>b <S-Left>
+cnoremap <Esc>f <S-Right>
+
 autocmd BufRead,BufNewFile *.gs setfiletype javascript
 nmap <silent> <space>s :hi clear SpellBad \| hi SpellBad term=reverse cterm=bold,reverse ctermfg=167 ctermbg=236 gui=bold,reverse guifg=#fb4934 guibg=bg \| set spell spelllang=en_us<CR>
+
+autocmd BufNewFile *.cpp 0r ~/programming/cpp/competitive/template.cpp
 
 " expansion of the active file directory
 cnoremap <expr> %% getcmdtype() == ':'?expand('%:h').'/':'%%'
